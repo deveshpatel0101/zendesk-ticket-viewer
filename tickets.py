@@ -15,7 +15,7 @@ def get_tickets(page=None, tickets_per_page=25):
         page = f'{DOMAIN}/api/v2/tickets.json?page[size]={tickets_per_page}'
     data = requests.get(page, auth=(EMAIL, API_TOKEN))
     if (data.status_code != 200):
-        raise Exception(data)
+        raise Exception(data.json()['error'])
     return data.json()
 
 
@@ -28,14 +28,5 @@ def get_ticket(ticket_id):
     data = requests.get(url, auth=(EMAIL, API_TOKEN))
     if (data.status_code != 200):
         data = data.json()
-        raise Exception(data['error'])
+        raise Exception(data.json()['error'])
     return data.json()
-
-
-def get_tickets_count():
-    url = f'{DOMAIN}/api/v2/tickets/count'
-    data = requests.get(url, auth=(EMAIL, API_TOKEN))
-    if (data.status_code != 200):
-        data = data.json()
-        raise Exception(data['error'])
-    return data.json()['count']['value']
