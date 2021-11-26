@@ -27,6 +27,5 @@ def get_ticket(ticket_id):
     url = f'{DOMAIN}/api/v2/tickets/{ticket_id}'
     data = requests.get(url, auth=(EMAIL, API_TOKEN))
     if (data.status_code != 200):
-        data = data.json()
         raise Exception(data.json()['error'])
     return data.json()

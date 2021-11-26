@@ -74,5 +74,6 @@ def get_user_input(curr_page, has_more, prev_input):
             user_choices = [str(index) for index in range(1, index+1)]
             user_choices.append('9')
             print('==========================================')
-            print(f'Input not recognized. Please enter a number from {"/".join(user_choices)}.')
+            print(
+                f'Input not recognized. Please enter a number from {"/".join(user_choices)}.')
             print('==========================================')
