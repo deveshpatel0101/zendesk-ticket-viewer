@@ -23,8 +23,7 @@ def display_ticket(ticket, number=None, full_info=False):
     print('==========================================')
 
 
-def display_error(error):
+def display_error(message):
     print('==========================================')
-    print('ERROR OCCURRED!')
-    print(str(error))
+    print(str(message))
     print('==========================================')

@@ -1,6 +1,6 @@
 from tickets import get_tickets, get_ticket
 from display_data import display_error, display_tickets, display_ticket
-from user_input import get_user_input
+from user_input import get_user_input, is_valid_input
 
 user_input = None
 tickets_per_page = 25
@@ -18,11 +18,14 @@ def main_func(user_input, tickets_per_page, curr_page, prev_page, next_page, has
     while True:
         try:
             while read_input:
-                user_input = get_user_input(curr_page, has_more, user_input)
+                user_input = get_user_input(user_input)
                 if user_input in ['GET_ALL', 'GET_ID', 'PREV', 'NEXT', 'EXIT']:
                     read_input = False
 
-            if user_input == 'GET_ALL' or user_input == 'NEXT':
+            if not is_valid_input(user_input, curr_page, has_more):
+                read_input = True
+                continue
+            elif user_input == 'GET_ALL' or user_input == 'NEXT':
                 data = get_tickets(
                     next_page, tickets_per_page=tickets_per_page)
                 curr_page = curr_page + 1 if len(data['tickets']) > 0 else 0
