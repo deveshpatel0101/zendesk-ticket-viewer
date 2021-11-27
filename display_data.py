@@ -4,6 +4,9 @@ init(autoreset=True)
 
 
 def display_tickets(tickets):
+    '''
+    Displays the list of tickets
+    '''
     if len(tickets) == 0:
         print(Fore.YELLOW + '==========================================')
         print(Fore.YELLOW + 'NO TICKETS TO SHOW')
@@ -13,6 +16,9 @@ def display_tickets(tickets):
 
 
 def display_ticket(ticket, full_info=False):
+    '''
+    Displays a single ticket
+    '''
     print(Fore.GREEN + '==========================================')
     print(Fore.CYAN + 'ID' + Fore.RESET + f': {ticket["id"]}')
     print(Fore.CYAN + 'SUBJECT' + Fore.RESET + f': {ticket["subject"]}')
