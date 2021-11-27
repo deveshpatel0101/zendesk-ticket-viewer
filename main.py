@@ -3,7 +3,7 @@ from display_data import display_error, display_tickets, display_ticket
 from user_input import get_user_input, is_valid_input
 
 user_input = None
-tickets_per_page = 25
+tickets_per_page = 5
 curr_page = 0
 prev_page = None
 next_page = None

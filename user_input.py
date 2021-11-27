@@ -1,11 +1,14 @@
 from display_data import display_error
+from colorama import init, Fore
+from termcolor import colored
+init(autoreset=True)
 
 
 def get_user_input(prev_input):
     if prev_input is None or prev_input == 'GET_ID':
-        print('1. GET TICKETS')
-        print('2. GET TICKET BY ID')
-        print('9. EXIT')
+        print('* Enter ' + Fore.CYAN + "'1'" + Fore.RESET + ' to view tickets')
+        print('* Enter ' + Fore.CYAN + "'2'" + Fore.RESET + ' to view a ticket by ID')
+        print('* Enter ' + Fore.CYAN + "'9'" + Fore.RESET + ' to quit')
         user_input = get_input('Enter your choice: ')
         if user_input == '1':
             return 'GET_ALL'
@@ -14,13 +17,14 @@ def get_user_input(prev_input):
         elif user_input == '9':
             return 'EXIT'
         else:
-            display_error(Exception('Input not recognized. Please enter a number from 1/2/9.'))
+            display_error(
+                Exception('Input not recognized. Please enter a number from 1/2/9.'))
             return
 
-    print('1. PREV PAGE')
-    print('2. NEXT PAGE')
-    print('3. GET BY ID')
-    print('9. EXIT')
+    print('* Enter ' + Fore.CYAN + "'1'" + Fore.RESET + ' for previous page')
+    print('* Enter ' + Fore.CYAN + "'2'" + Fore.RESET + ' for next page')
+    print('* Enter ' + Fore.CYAN + "'3'" + Fore.RESET + ' to get a ticket by ID')
+    print('* Enter ' + Fore.CYAN + "'9'" + Fore.RESET + ' to quit')
     user_input = get_input('Enter your choice: ')
 
     if user_input == '1':
@@ -32,7 +36,8 @@ def get_user_input(prev_input):
     elif user_input == '9':
         return 'EXIT'
     else:
-        display_error('Input not recognized. Please enter a number from 1/2/3/9.')
+        display_error(
+            'Input not recognized. Please enter a number from 1/2/3/9.')
 
 
 def is_valid_input(user_input, curr_page, has_more):
@@ -44,6 +49,7 @@ def is_valid_input(user_input, curr_page, has_more):
         return False
 
     return True
+
 
 def get_input(text):
     return input(text)
