@@ -6,7 +6,7 @@ init(autoreset=True)
 def display_tickets(tickets):
     if len(tickets) == 0:
         print(Fore.YELLOW + '==========================================')
-        print(Fore.YELLOW + 'NO TICKETS TO DISPLAY')
+        print(Fore.YELLOW + 'NO TICKETS TO SHOW')
         print(Fore.YELLOW + '==========================================')
     for ticket in tickets:
         display_ticket(ticket)
