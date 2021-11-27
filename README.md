@@ -49,7 +49,7 @@ The root directory has following files:
 2. `envs.py`: Loads environment variables set in `.env` file using `python-decouple` library.
 3. `main.py`: Main execution point of the program.
 4. `tickets.py`: Two functions to get list of tickets and a ticket by id from zendesk API.
-5. `user_input.py`: Has functions for getting user input and validating the input.
+5. `user_input.py`: Has function to get the user input.
 6. `tests/`: Folder contains unit tests that tests the code of `tickets.py` and `user_input.py` files.
 
 ```
