@@ -1,11 +1,10 @@
 from display_data import display_error
 from colorama import init, Fore
-from termcolor import colored
 init(autoreset=True)
 
 
-def get_user_input(prev_input):
-    if prev_input is None or prev_input == 'GET_ID':
+def get_user_input(curr_page):
+    if curr_page < 1:
         print('* Enter ' + Fore.CYAN + "'1'" + Fore.RESET + ' to view tickets')
         print('* Enter ' + Fore.CYAN + "'2'" + Fore.RESET + ' to view a ticket by ID')
         print('* Enter ' + Fore.CYAN + "'9'" + Fore.RESET + ' to quit')

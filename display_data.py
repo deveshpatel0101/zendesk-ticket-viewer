@@ -1,5 +1,5 @@
 from dateutil.parser import parse
-from colorama import init, Fore, Style
+from colorama import init, Fore
 init(autoreset=True)
 
 

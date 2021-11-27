@@ -18,7 +18,7 @@ def main_func(user_input, tickets_per_page, curr_page, prev_page, next_page, has
     while True:
         try:
             while read_input:
-                user_input = get_user_input(user_input)
+                user_input = get_user_input(curr_page)
                 if user_input in ['GET_ALL', 'GET_ID', 'PREV', 'NEXT', 'EXIT']:
                     read_input = False
 
