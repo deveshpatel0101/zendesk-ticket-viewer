@@ -19,8 +19,9 @@ def display_ticket(ticket, full_info=False):
     print(Fore.CYAN + 'DATE OPENED' + Fore.RESET +
           f': {format_datetime(ticket["created_at"])}')
     if not full_info:
+        description = ticket['description'].replace('\n', ' ')[:50]
         print(Fore.CYAN + 'DESCRIPTION' + Fore.RESET +
-              f': {ticket["description"][:50]}...')
+              f': {description}...')
     if full_info:
         print(Fore.CYAN + 'LAST UPDATED' + Fore.RESET +
             f': {format_datetime(ticket["updated_at"])}')

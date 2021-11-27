@@ -1,3 +1,4 @@
+import requests
 from tickets import get_tickets, get_ticket
 from display_data import display_error, display_tickets, display_ticket
 from user_input import get_user_input, is_valid_input
@@ -50,9 +51,14 @@ def main_func(user_input, tickets_per_page, curr_page, prev_page, next_page, has
                 has_more = None
             else:
                 return
-            read_input = True
+        except requests.exceptions.ConnectionError:
+            display_error('Connection Error!\nThis could be because either the server is down or your internet is not working!')
+        except requests.exceptions.RequestException:
+            display_error('Something went wrong while fetching data from the API!')
         except Exception as error:
             display_error(error)
+        finally:
+            read_input = True
 
 
 main_func(user_input, tickets_per_page, curr_page,
