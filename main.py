@@ -49,6 +49,7 @@ def main_func(user_input, tickets_per_page, curr_page, prev_page, next_page):
             display_error(error)
         finally:
             read_input = True
+            curr_page = 0 if curr_page < 0 else curr_page
             if user_input != 'GET_ID':
                 temp = response['links']['prev']
                 prev_page = temp if temp else prev_page
