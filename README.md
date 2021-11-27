@@ -4,7 +4,6 @@
 
 1. Run the program
 2. Run unit tests
-3. Basic folder structure and file info
 
 ### Run the program
 
@@ -40,17 +39,6 @@ To start the program, follow the below instructions:
    python -m unittest tests/*.py -b
    ```
    Please note the `-b` option. Since there are a lot of print statements, this option will supress them during tests.
-
-### Folder structure and file info
-
-The root directory has following files:
-
-1. `display_data.py`: Bunch of functions to print statements to display ticket information and error messages
-2. `envs.py`: Loads environment variables set in `.env` file using `python-decouple` library.
-3. `main.py`: Main execution point of the program.
-4. `tickets.py`: Two functions to get list of tickets and a ticket by id from zendesk API.
-5. `user_input.py`: Has function to get the user input.
-6. `tests/`: Folder contains unit tests that tests the code of `tickets.py` and `user_input.py` files.
 
 ```
 HAVE FUN!!
