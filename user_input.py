@@ -28,7 +28,7 @@ def get_user_input(curr_page):
         print('* Enter ' + Fore.CYAN + "'9'" + Fore.RESET + ' to quit')
         user_input = get_input('Enter your choice: ')
         if user_input == '1':
-            return 'GET_ALL'
+            return 'NEXT'
         elif user_input == '2':
             return 'GET_ID'
         elif user_input == '9':
