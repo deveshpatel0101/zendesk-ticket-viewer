@@ -42,8 +42,8 @@ def mock_get_ticket(*args, **kwargs):
     }, 404)
 
 
-@mock.patch('tickets.requests.get', side_effect=mock_get_tickets)
-class TestGetTickets(unittest.TestCase):
+class TestTickets(unittest.TestCase):
+    @mock.patch('tickets.requests.get', side_effect=mock_get_tickets)
     def test_get_tickets(self, mocker):
         data = get_tickets(None, 25)
         f = open('tests/response.json')
@@ -51,9 +51,7 @@ class TestGetTickets(unittest.TestCase):
         f.close()
         self.assertEqual(originalData, data)
 
-
-@mock.patch('tickets.requests.get', side_effect=mock_get_ticket)
-class TestGetTicket(unittest.TestCase):
+    @mock.patch('tickets.requests.get', side_effect=mock_get_ticket)
     def test_get_ticket(self, mocker):
         response = get_ticket(14)
         f = open('tests/response.json')
