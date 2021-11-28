@@ -1,11 +1,12 @@
-## Zendesk Ticket Viewer
+# Zendesk Ticket Viewer
 
 ### Contents
 
-1. Run the program
-2. Run unit tests
+1. Installation
+2. Unit tests
+3. Usage
 
-### Run the program
+#### Installation
 
 To start the program, follow the below instructions:
 
@@ -32,7 +33,7 @@ To start the program, follow the below instructions:
    python main.py
    ```
 
-### Run unit tests
+#### Unit tests
 
 1. To run the tests, execute the following:
    ```
@@ -40,6 +41,31 @@ To start the program, follow the below instructions:
    ```
    Please note the `-b` option. Since there are a lot of print statements, this option will supress them during tests.
 
-```
-HAVE FUN!!
-```
+#### Usage
+
+After executing the command `python main.py`, you will have the following screen.
+
+<p align="center">
+<img src="https://i.imgur.com/kUQ3KEQ.jpeg" width="85%" align="center" />
+</p>
+
+Read the set of options displayed and hit the associated number to either page through the tickets or search a ticket by id.
+
+Following are some of the screenshots.
+
+<p align="center">
+<img src="https://i.imgur.com/1yuS1FW.jpg" width="85%" />
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/vkD0Eve.jpg" width="85%" />
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/uQ0G3Sm.jpg" width="85%" />
+</p>
+
+
+<h2 align="center">
+HAVE FUN
+</h2>
