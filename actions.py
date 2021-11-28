@@ -4,6 +4,12 @@ from tickets import get_tickets, get_ticket
 
 
 def take_next_action(store):
+    '''
+    Calls necessary functions to:
+    1. Interact with the user
+    2. Fetch ticket/s
+    3. Display ticket/s
+    '''
     read_input = True
     user_input = None
     while read_input:
@@ -27,7 +33,7 @@ def take_next_action(store):
         store['curr_page'] = 0
         store['prev_page'] = None
         store['next_page'] = None
-        ticket_id = input('Enter ticket id: ')
+        ticket_id = get_input_id('Enter ticket id: ')
         response = get_ticket(ticket_id)
         display_ticket(response['ticket'], full_info=True)
 
@@ -41,3 +47,10 @@ def take_next_action(store):
         store['prev_page'] = temp if temp else store['prev_page']
         temp = response['links']['next']
         store['next_page'] = temp if temp else store['next_page']
+
+
+def get_input_id(text):
+    '''
+    reads ticket id from user
+    '''
+    return input(text)

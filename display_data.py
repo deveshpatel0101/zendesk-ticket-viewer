@@ -40,11 +40,17 @@ def display_ticket(ticket, full_info=False):
 
 
 def display_error(message):
+    '''
+    Displays error message
+    '''
     print(Fore.YELLOW + '==========================================')
     print(Fore.YELLOW + str(message))
     print(Fore.YELLOW + '==========================================')
 
 
 def format_datetime(utc_date_string):
+    '''
+    Converts UTC datetime string to readable format
+    '''
     date = parse(utc_date_string)
     return date.strftime('%b-%d-%Y %I:%M:%S %p')

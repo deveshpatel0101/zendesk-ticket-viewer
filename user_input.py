@@ -8,7 +8,7 @@ def get_user_input(curr_page):
     Gets the user input based on which page is currently displayed\n
     returns either of [None, 'GET_ALL', 'GET_ID', 'PREV', 'NEXT', 'EXIT']
     '''
-    if curr_page == 0:
+    if curr_page <= 0:
         print('* Enter ' + Fore.CYAN + "'1'" + Fore.RESET + ' to view tickets')
         print('* Enter ' + Fore.CYAN + "'2'" +
               Fore.RESET + ' to view a ticket by ID')
@@ -63,4 +63,7 @@ def get_user_input(curr_page):
 
 
 def get_input(text):
+    '''
+    Reads user input
+    '''
     return input(text)

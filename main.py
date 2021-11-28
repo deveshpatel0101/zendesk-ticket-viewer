@@ -13,6 +13,9 @@ store = {
 
 
 def func_main(store):
+    '''
+    Repeatedly calls take_next_action until user enters 'EXIT' 
+    '''
     while store['user_input'] != 'EXIT':
         try:
             take_next_action(store)
