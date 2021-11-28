@@ -11,15 +11,22 @@ def display_tickets(tickets):
         print(Fore.YELLOW + '==========================================')
         print(Fore.YELLOW + 'NO TICKETS TO SHOW')
         print(Fore.YELLOW + '==========================================')
-    for ticket in tickets:
+        return
+    print(Fore.GREEN + '==========================================')
+    for (index, ticket) in enumerate(tickets):
         display_ticket(ticket)
+        if index != len(tickets) - 1:
+            print(Fore.GREEN + '------------------------------------------')
+        else:
+            print(Fore.GREEN + '==========================================')
 
 
 def display_ticket(ticket, full_info=False):
     '''
     Displays a single ticket
     '''
-    print(Fore.GREEN + '==========================================')
+    if full_info:
+        print(Fore.GREEN + '==========================================')
     print(Fore.CYAN + 'ID' + Fore.RESET + f': {ticket["id"]}')
     print(Fore.CYAN + 'SUBJECT' + Fore.RESET + f': {ticket["subject"]}')
     print(Fore.CYAN + 'DATE OPENED' + Fore.RESET +
@@ -30,13 +37,15 @@ def display_ticket(ticket, full_info=False):
               f': {description}...')
     if full_info:
         print(Fore.CYAN + 'LAST UPDATED' + Fore.RESET +
-            f': {format_datetime(ticket["updated_at"])}')
+              f': {format_datetime(ticket["updated_at"])}')
         print(Fore.CYAN + 'DESCRIPTION' + Fore.RESET +
               f': {ticket["description"]}')
         print(Fore.CYAN + 'PRIORITY' + Fore.RESET + f': {ticket["priority"]}')
         print(Fore.CYAN + 'STATUS' + Fore.RESET + f': {ticket["status"]}')
-        print(Fore.CYAN + 'TAGS' + Fore.RESET + f': {", ".join(ticket["tags"])}')
-    print(Fore.GREEN + '==========================================')
+        print(Fore.CYAN + 'TAGS' + Fore.RESET +
+              f': {", ".join(ticket["tags"])}')
+    if full_info:
+        print(Fore.GREEN + '==========================================')
 
 
 def display_error(message):
