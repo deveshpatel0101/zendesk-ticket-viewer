@@ -61,7 +61,6 @@ class TestActions(unittest.TestCase):
         self.assertEqual(store['curr_page'], 0)
 
     @mock.patch('console_io.user_input.get_input', return_value='9')
-    @mock.patch('controllers.tickets.requests.get', side_effect=mock_get_tickets)
     def test_user_input_exit(self, *args):
         store = get_new_store()
         take_next_action(store)
