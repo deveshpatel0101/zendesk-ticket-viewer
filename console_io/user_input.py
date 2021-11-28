@@ -1,4 +1,4 @@
-from display_data import display_error
+from console_io.display_data import display_error
 from colorama import init, Fore
 init(autoreset=True)
 

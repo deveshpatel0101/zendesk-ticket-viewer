@@ -1,12 +1,12 @@
 import json
 import unittest
 from unittest import mock
-from tickets import get_tickets, get_ticket
+from controllers.tickets import get_tickets, get_ticket
 from mockers.mock_tickets import mock_get_tickets, mock_get_ticket
 
 
 class TestTickets(unittest.TestCase):
-    @mock.patch('tickets.requests.get', side_effect=mock_get_tickets)
+    @mock.patch('controllers.tickets.requests.get', side_effect=mock_get_tickets)
     def test_get_tickets(self, mocker):
         data = get_tickets(None, 25)
         f = open('tests/response.json')
@@ -14,7 +14,7 @@ class TestTickets(unittest.TestCase):
         f.close()
         self.assertEqual(originalData, data)
 
-    @mock.patch('tickets.requests.get', side_effect=mock_get_ticket)
+    @mock.patch('controllers.tickets.requests.get', side_effect=mock_get_ticket)
     def test_get_ticket(self, mocker):
         response = get_ticket(14)
         f = open('tests/response.json')

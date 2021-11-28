@@ -1,6 +1,6 @@
 import requests
 from actions import take_next_action
-from display_data import display_error
+from console_io.display_data import display_error
 
 
 store = {

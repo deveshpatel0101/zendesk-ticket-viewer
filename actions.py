@@ -1,6 +1,6 @@
-from user_input import get_user_input
-from display_data import display_error, display_tickets, display_ticket
-from tickets import get_tickets, get_ticket
+from console_io.user_input import get_user_input
+from console_io.display_data import display_error, display_tickets, display_ticket
+from controllers.tickets import get_tickets, get_ticket
 
 
 def take_next_action(store):
