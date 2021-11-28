@@ -1,5 +1,5 @@
 from user_input import get_user_input
-from display_data import display_tickets, display_ticket
+from display_data import display_error, display_tickets, display_ticket
 from tickets import get_tickets, get_ticket
 
 
@@ -53,4 +53,12 @@ def get_input_id(text):
     '''
     reads ticket id from user
     '''
-    return input(text)
+    user_input = input(text)
+    while True:
+        if not user_input.isdigit():
+            display_error('Please enter a number.')
+            user_input = input(text)
+        else:
+            break
+
+    return user_input
