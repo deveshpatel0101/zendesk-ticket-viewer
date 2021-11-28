@@ -9,10 +9,8 @@ def get_tickets(page=None, tickets_per_page=25):
     '''
     if page is None:
         page = f'{DOMAIN}/api/v2/tickets.json?page[size]={tickets_per_page}'
-    data = requests.get(page, auth=(EMAIL, API_TOKEN))
-    if (data.status_code != 200):
-        raise Exception(data.json()['error'])
-    return data.json()
+    response = requests.get(page, auth=(EMAIL, API_TOKEN))
+    return process_response(response)
 
 
 def get_ticket(ticket_id):
@@ -21,7 +19,19 @@ def get_ticket(ticket_id):
     Else returns a dict that contains ticket info
     '''
     url = f'{DOMAIN}/api/v2/tickets/{ticket_id}'
-    data = requests.get(url, auth=(EMAIL, API_TOKEN))
-    if (data.status_code != 200):
-        raise Exception(data.json()['error'])
-    return data.json()
+    response = requests.get(url, auth=(EMAIL, API_TOKEN))
+    return process_response(response)
+
+
+def process_response(response):
+    if response.status_code == 200:
+        return response.json()
+
+    if 'application/json' in response.headers['content-type']:
+        data = response.json()
+        error_msg = data['error']
+        if 'description' in data:
+            error_msg += f' - {data["description"]}'
+        raise Exception(error_msg)
+    else:
+        raise Exception(response.text)
