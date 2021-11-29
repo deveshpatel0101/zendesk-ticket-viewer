@@ -8,7 +8,7 @@ store = {
     'curr_page': 0,
     'prev_page': None,
     'next_page': None,
-    'tickets_per_page': 5,
+    'tickets_per_page': 10,
 }
 
 

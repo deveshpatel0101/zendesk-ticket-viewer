@@ -29,10 +29,6 @@ def take_next_action(store):
         store['curr_page'] = store['curr_page'] - 1
         display_tickets(response['tickets'])
     elif user_input == 'GET_ID':
-        # reset pagination
-        store['curr_page'] = 0
-        store['prev_page'] = None
-        store['next_page'] = None
         ticket_id = get_input_id('Enter ticket id: ')
         response = get_ticket(ticket_id)
         display_ticket(response['ticket'], full_info=True)

@@ -41,15 +41,15 @@ class TestActions(unittest.TestCase):
         self.assertEqual(store['user_input'], 'PREV')
         self.assertEqual(store['curr_page'], 1)
 
-    @mock.patch('console_io.user_input.get_input', return_value='2')
+    @mock.patch('console_io.user_input.get_input', return_value='3')
     @mock.patch('actions.get_input_id', return_value='2')
     @mock.patch('controllers.tickets.requests.get', side_effect=mock_get_ticket)
     def test_user_input_get_id_with_valid_id(self, *args):
         store = get_new_store()
-        store['curr_page'] = 1
+        store['curr_page'] = 5
         take_next_action(store)
         self.assertEqual(store['user_input'], 'GET_ID')
-        self.assertEqual(store['curr_page'], 0)
+        self.assertEqual(store['curr_page'], 5)
 
     @mock.patch('console_io.user_input.get_input', return_value='2')
     @mock.patch('actions.get_input_id', return_value='124')
