@@ -28,10 +28,11 @@ def display_ticket(ticket, full_info=False):
     if full_info:
         print(Fore.GREEN + '==========================================')
     print(Fore.CYAN + 'ID' + Fore.RESET + f': {ticket["id"]}')
-    print(Fore.CYAN + 'SUBJECT' + Fore.RESET + f': {ticket["subject"]}')
+    print(Fore.CYAN + 'SUBJECT' + Fore.RESET + f': {ticket["subject"][:50]}')
     print(Fore.CYAN + 'DATE OPENED' + Fore.RESET +
           f': {format_datetime(ticket["created_at"])}')
     if not full_info:
+        print(Fore.CYAN + 'STATUS' + Fore.RESET + f': {ticket["status"]}')
         description = ticket['description'].replace('\n', ' ')[:50]
         print(Fore.CYAN + 'DESCRIPTION' + Fore.RESET +
               f': {description}...')
