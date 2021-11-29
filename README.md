@@ -26,7 +26,7 @@ To start the program, follow the below instructions:
 
 4. Use the following command to install the required libraries.
    ```
-   pip install requests python-dateutil colorama python-decouple
+   pip install -r requirements.txt
    ```
 5. Once all the libraries have been installed, run the following command to start the program.
    ```
