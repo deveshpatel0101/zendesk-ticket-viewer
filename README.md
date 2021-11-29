@@ -6,7 +6,7 @@
 2. Unit tests
 3. Usage
 
-#### Installation
+### Installation
 
 To start the program, follow the below instructions:
 
@@ -33,7 +33,7 @@ To start the program, follow the below instructions:
    python main.py
    ```
 
-#### Unit tests
+### Unit tests
 
 1. To run the tests, execute the following:
    ```
@@ -41,7 +41,7 @@ To start the program, follow the below instructions:
    ```
    Please note the `-b` option. Since there are a lot of print statements, this option will supress them during tests.
 
-#### Usage
+### Usage
 
 After executing the command `python main.py`, you will have the following screen.
 
