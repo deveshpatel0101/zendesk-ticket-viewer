@@ -2,23 +2,25 @@ from dateutil.parser import parse
 from colorama import init, Fore
 init(autoreset=True)
 
+DELIMITER_SIZE = 45
+
 
 def display_tickets(tickets):
     '''
     Displays the list of tickets
     '''
     if len(tickets) == 0:
-        print(Fore.YELLOW + '==========================================')
+        print(Fore.YELLOW + '='*DELIMITER_SIZE)
         print(Fore.YELLOW + 'NO TICKETS TO SHOW')
-        print(Fore.YELLOW + '==========================================')
+        print(Fore.YELLOW + '='*DELIMITER_SIZE)
         return
-    print(Fore.GREEN + '==========================================')
+    print(Fore.GREEN + '='*DELIMITER_SIZE)
     for (index, ticket) in enumerate(tickets):
         display_ticket(ticket)
         if index != len(tickets) - 1:
-            print(Fore.GREEN + '------------------------------------------')
+            print(Fore.GREEN + '-'*DELIMITER_SIZE)
         else:
-            print(Fore.GREEN + '==========================================')
+            print(Fore.GREEN + '='*DELIMITER_SIZE)
 
 
 def display_ticket(ticket, full_info=False):
@@ -26,7 +28,7 @@ def display_ticket(ticket, full_info=False):
     Displays a single ticket
     '''
     if full_info:
-        print(Fore.GREEN + '==========================================')
+        print(Fore.GREEN + '='*DELIMITER_SIZE)
     print(Fore.CYAN + 'ID' + Fore.RESET + f': {ticket["id"]}')
     print(Fore.CYAN + 'SUBJECT' + Fore.RESET + f': {ticket["subject"][:50]}')
     print(Fore.CYAN + 'DATE OPENED' + Fore.RESET +
@@ -46,16 +48,16 @@ def display_ticket(ticket, full_info=False):
         print(Fore.CYAN + 'TAGS' + Fore.RESET +
               f': {", ".join(ticket["tags"])}')
     if full_info:
-        print(Fore.GREEN + '==========================================')
+        print(Fore.GREEN + '='*DELIMITER_SIZE)
 
 
 def display_error(message):
     '''
     Displays error message
     '''
-    print(Fore.YELLOW + '==========================================')
+    print(Fore.YELLOW + '='*DELIMITER_SIZE)
     print(Fore.YELLOW + str(message))
-    print(Fore.YELLOW + '==========================================')
+    print(Fore.YELLOW + '='*DELIMITER_SIZE)
 
 
 def format_datetime(utc_date_string):
