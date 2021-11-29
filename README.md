@@ -46,7 +46,7 @@ To start the program, follow the below instructions:
 After executing the command `python main.py`, you will have the following screen.
 
 <p align="center">
-<img src="https://i.imgur.com/kUQ3KEQ.jpeg" width="85%" align="center" />
+<img src="https://i.imgur.com/kUQ3KEQ.jpeg" width="95%" align="center" />
 </p>
 
 Read the set of options displayed and hit the associated number to either page through the tickets or search a ticket by id.
@@ -54,15 +54,15 @@ Read the set of options displayed and hit the associated number to either page t
 Following are some of the screenshots.
 
 <p align="center">
-<img src="https://i.imgur.com/1yuS1FW.jpg" width="85%" />
+<img src="https://i.imgur.com/1yuS1FW.jpg" width="95%" />
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/vkD0Eve.jpg" width="85%" />
+<img src="https://i.imgur.com/JKbhodh.jpg" width="95%" />
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/uQ0G3Sm.jpg" width="85%" />
+<img src="https://i.imgur.com/HAq08aK.jpg" width="95%" />
 </p>
 
 
